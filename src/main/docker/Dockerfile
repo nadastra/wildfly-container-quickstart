@@ -61,5 +61,7 @@ CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
 
 #
 # Copy the WAR file
+
+COPY /target/wildfly-container-quickstart.war .
 #
-COPY target/wildfly-container-quickstart.war /opt/jboss/wildfly/standalone/deployments/ROOT.war
+COPY wildfly-container-quickstart.war /opt/jboss/wildfly/standalone/deployments/ROOT.war
