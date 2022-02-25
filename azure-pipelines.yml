@@ -47,7 +47,7 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        buildContext: $(Pipeline.Workspace)
+        buildContext: $(Pipeline.Workspace)/s
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
