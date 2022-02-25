@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: wildflycontainerqs 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wildflycontainerqs
+  template:
+    metadata:
+      labels:
+        app: wildflycontainerqs 
+    spec:
+      containers:
+        - name: wildflycontainerqs 
+          image: acrparveenkumar.azurecr.io/wildflycontainerqs
+          ports:
+          - containerPort: 8080
