@@ -12,7 +12,7 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '4cc9dc2f-9e96-407c-bdb9-0b7e6eccf3ec'
-  imageRepository: 'wildfly'
+  imageRepository: 'wildflycontainerqs'
   containerRegistry: 'acrparveenkumar.azurecr.io'
   pomFilePath: '$(Build.SourcesDirectory)/pom.xml'
   dockerfilePath: '**/Dockerfile'
