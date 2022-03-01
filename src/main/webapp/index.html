@@ -3,6 +3,32 @@
         <title>WildFly Container Quickstart</title>
     </head>
     <body>
-        You have the WildFly Container Quickstart up and running!
+        <div id="wildfly">
+            You have the WildFly Container Quickstart up and running!
+            <div id="success"></div>
+            <div id="error"></div>
+            <button type="button" onClick="getEcho()">Get Echo</button>
+        </div>
     </body>
+    
+    <script>
+        function getEcho() {
+            fetch('http://20.53.203.27/echo')
+                .then (
+                    function (response) {
+                        if (response.status !== 200) {
+                            document.getElementById("error").innerHTML = 'Get echo returned an error' + response.status;
+                            return;
+                        }
+                        response.json().then(function(data) {
+                            document.getElementById("success").innerHTML = data;
+                        });
+                    }
+                )
+                .catch(function(err) {
+                    document.getElementById("error").innerHTML = "Error on call' + err;
+                 });
+        }
+    </script>
+    
 </html>
