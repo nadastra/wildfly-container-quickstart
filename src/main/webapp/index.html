@@ -1,17 +1,8 @@
 <html>
     <head>
         <title>WildFly Container Quickstart</title>
-    </head>
-    <body>
-        <div id="wildfly">
-            You have the WildFly Container Quickstart up and running!
-            <div id="success"></div>
-            <div id="error"></div>
-            <button type="button" onClick="getEcho()">Get Echo</button>
-        </div>
-    </body>
-    
-    <script>
+        
+         <script>
         function getEcho() {
             fetch('http://20.53.203.27/echo')
                 .then (
@@ -26,9 +17,21 @@
                     }
                 )
                 .catch(function(err) {
-                    document.getElementById("error").innerHTML = "Error on call' + err;
+                    document.getElementById("error").innerHTML = 'Error on call' + err;
                  });
         }
     </script>
+        
+    </head>
+    <body>
+        <div id="wildfly">
+            You have the WildFly Container Quickstart up and running!
+            <div id="success"></div>
+            <div id="error"></div>
+            <button type="button" onclick="getEcho()">Get Echo</button>
+        </div>
+    </body>
+    
+   
     
 </html>
