@@ -51,6 +51,7 @@ USER jboss
 
 # Expose the ports we're interested in
 EXPOSE 8080
+EXPOSE 9990
 
 # Make Java 8 obey container resource limits, improve performance
 #ENV JAVA_OPTS "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseG1GC -Djava.awt.headless=true"
