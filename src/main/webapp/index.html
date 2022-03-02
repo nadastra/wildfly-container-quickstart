@@ -15,7 +15,7 @@
                     })
                     .then(function(data) {
                             console.log(data);
-                            document.getElementById("success").innerHTML = data.message;
+                            document.getElementById("success").innerHTML = document.getElementById("success").innerHTML + data.message;
                     })
                     .catch(function(err) {
                         document.getElementById("error").innerHTML = 'Error on call: ' + err;
@@ -27,7 +27,7 @@
     <body>
         <div id="wildfly">
             You have the WildFly Container Quickstart up and running!
-            <div id="success"></div>
+            <div id="success"><h2> Response: </h2></div>
             <div id="error"></div>
             <button type="button" onclick="getEcho()">Get Echo</button>
         </div>
