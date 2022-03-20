@@ -8,14 +8,7 @@
                   
           <script id="load-msal" src="https://alcdn.msauth.net/browser/2.15.0/js/msal-browser.js"
             integrity="sha384-dFzMiVGB5HpWZ+5w5VSif6jhWfNeplSw9ACYmQKZcY2azuT9kCxVWVI9HyfGdkHV"
-            crossorigin="anonymous"></script>
-  
-        <!-- To help ensure reliability, Microsoft provides a second CDN -->
-        <!--<script type="text/javascript">
-            if (typeof Msal === 'undefined') document.write(unescape("%3Cscript src='https://alcdn.msftauth.net/browser/2.15.0/js/msal-browser.js' type='text/javascript' crossorigin='anonymous' %3E%3C/script%3E"));
-        </script>-->
-        
-        
+            crossorigin="anonymous"></script>        
          <script>
         function getEcho() {
             fetch('http://20.92.67.123/echo')
@@ -38,7 +31,8 @@
         
         function login() {
             const accessToken = signin();
-            document.getElementById("debug").innerHTML = document.getElementById("debug").innerHTML + accessToken;
+            console.log(accessToken);
+            document.getElementById("success").innerHTML = document.getElementById("success").innerHTML + accessToken;
         }
              
         /*function login() {
