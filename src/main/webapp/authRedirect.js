@@ -1,6 +1,4 @@
-<script type="module">
-  import { msalConfig, loginRequest } from './authConfig.js';
-</script>
+import { msalConfig, loginRequest } from './authConfig.js';
 
 // Create the main myMSALObj instance
 // configuration parameters are located at authConfig.js
