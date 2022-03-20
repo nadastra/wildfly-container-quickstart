@@ -24,8 +24,36 @@ if (redirectResponse !== null) {
     let accessToken = redirectResponse.accessToken;
     
     // Call your API with token
-    //callApi(accessToken);
+    getEcho(accessToken);
 } 
+
+function getEcho(access_token) {
+            var headers = new Headers();
+            var bearer = "Bearer " + access_token;
+            headers.append("Authorization", bearer);
+            var options = {
+                method: "GET",
+                headers: headers
+            };
+            var echoEndpoint = "http://20.92.67.123/echo";
+            
+            fetch(echoEndpoint, options)
+                .then (
+                    function (response) {
+                        if (response.status !== 200) {
+                            document.getElementById("error").innerHTML = 'Get echo returned an error' + response.status;
+                            return;
+                        }
+                        return response.json();
+                    })
+                    .then(function(data) {
+                            console.log(data);
+                            document.getElementById("success").innerHTML = document.getElementById("success").innerHTML + data.message;
+                    })
+                    .catch(function(err) {
+                        document.getElementById("error").innerHTML = 'Error on call: ' + err;
+                    });
+        };
 
 /*function selectAccount () {
     const currentAccounts = myMSALObj.getAllAccounts();
