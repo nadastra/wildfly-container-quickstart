@@ -23,9 +23,4 @@ const loginRequest = {
 };
 
 // exporting config object
-if (typeof exports !== 'undefined') {
-  module.exports = {
-    msalConfig: msalConfig,
-    loginRequest: loginRequest,
-  };
-}
+export { msalConfig, loginRequest };
