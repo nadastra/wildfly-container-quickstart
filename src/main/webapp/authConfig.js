@@ -26,5 +26,6 @@ const loginRequest = {
 if (typeof exports !== 'undefined') {
   module.exports = {
     msalConfig: msalConfig,
+    loginRequest: loginRequest,
   };
 }
