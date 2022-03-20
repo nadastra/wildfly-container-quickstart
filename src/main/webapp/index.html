@@ -1,6 +1,9 @@
 <html>
     <head>
         <title>WildFly Container Quickstart</title>
+          <script type="module" src="authRedirect.js"></script>
+          import { signin } from 'authRedirect.js';
+        
           <script id="load-msal" src="https://alcdn.msauth.net/browser/2.15.0/js/msal-browser.js"
             integrity="sha384-dFzMiVGB5HpWZ+5w5VSif6jhWfNeplSw9ACYmQKZcY2azuT9kCxVWVI9HyfGdkHV"
             crossorigin="anonymous"></script>
@@ -10,7 +13,7 @@
             if (typeof Msal === 'undefined') document.write(unescape("%3Cscript src='https://alcdn.msftauth.net/browser/2.15.0/js/msal-browser.js' type='text/javascript' crossorigin='anonymous' %3E%3C/script%3E"));
         </script>-->
         
-        <script type="module" src="authRedirect.js"></script>
+        
          <script>
         function getEcho() {
             fetch('http://20.92.67.123/echo')
