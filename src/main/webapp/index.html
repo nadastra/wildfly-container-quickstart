@@ -38,7 +38,7 @@
             
              myMSALObj.acquireTokenSilent({
                 account: myMSALObj.getAllAccounts()[0],
-                scopes: ["openid"]
+                scopes: ["openid", "profile"]
             }).then(response => {
                   let accessToken = response.accessToken;
             });
