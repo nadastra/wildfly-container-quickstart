@@ -2,8 +2,9 @@
     <head>
         <title>WildFly Container Quickstart</title>
           <script type="module">
-              import { signin } from "./authRedirect.js";
+              import { signin, myMSALObj } from "./authRedirect.js";
               window.signin = signin;
+              window.myMSALObj = myMSALObj;
         </script>
                   
           <script id="load-msal" src="https://alcdn.msauth.net/browser/2.15.0/js/msal-browser.js"
@@ -30,8 +31,18 @@
         };
         
         function login() {
-            const accessToken = signin();
-            console.log(accessToken);
+            const aToken = signin();
+            console.log(aToken);
+            
+            let accessToken = "";
+            
+             myMSALObj.acquireTokenSilent({
+                account: myMSALObj.getAllAccounts()[0],
+                scopes: ["openid"]
+            }).then(response => {
+                  let accessToken = response.accessToken;
+            });
+            
             document.getElementById("success").innerHTML = document.getElementById("success").innerHTML + accessToken;
         }
              
