@@ -40,6 +40,6 @@ function handleResponse(response) {
     }
 }
 
-function login() {
+function signin() {
     myMSALObj.loginRedirect(loginRequest);
 }
