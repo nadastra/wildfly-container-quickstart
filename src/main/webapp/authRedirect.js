@@ -10,13 +10,22 @@ let username = "";
  * A promise handler needs to be registered for handling the
  * response returned from redirect flow. For more information, visit:
  * 
- */
+ 
 myMSALObj.handleRedirectPromise()
     .then(handleResponse)
     .catch((error) => {
         console.error(error);
         throw error;
-    });
+    });*/
+
+const redirectResponse = await myMSALObj.handleRedirectPromise();
+if (redirectResponse !== null) {
+    // Acquire token silent success
+    let accessToken = redirectResponse.accessToken;
+    return accessToken;
+    // Call your API with token
+    //callApi(accessToken);
+} 
 
 /*function selectAccount () {
     const currentAccounts = myMSALObj.getAllAccounts();
