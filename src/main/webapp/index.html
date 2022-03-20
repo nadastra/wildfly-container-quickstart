@@ -11,7 +11,7 @@
             integrity="sha384-dFzMiVGB5HpWZ+5w5VSif6jhWfNeplSw9ACYmQKZcY2azuT9kCxVWVI9HyfGdkHV"
             crossorigin="anonymous"></script>        
          <script>
-        function getEcho(access_token) {
+       /* function getEcho(access_token) {
             var headers = new Headers();
             var bearer = "Bearer " + access_token;
             headers.append("Authorization", bearer);
@@ -37,11 +37,11 @@
                     .catch(function(err) {
                         document.getElementById("error").innerHTML = 'Error on call: ' + err;
                     });
-        };
+        };*/
         
         function login() {
-            let aToken = signin();
-            console.log(aToken);
+            signin();
+            //console.log(aToken);
             
             //let accessToken = "";
             
@@ -53,7 +53,7 @@
             });*/
             
             //document.getElementById("success").innerHTML = document.getElementById("success").innerHTML + accessToken;
-            getEcho(aToken);
+           // getEcho(aToken);
         }
              
         /*function login() {
