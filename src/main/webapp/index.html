@@ -11,8 +11,17 @@
             integrity="sha384-dFzMiVGB5HpWZ+5w5VSif6jhWfNeplSw9ACYmQKZcY2azuT9kCxVWVI9HyfGdkHV"
             crossorigin="anonymous"></script>        
          <script>
-        function getEcho() {
-            fetch('http://20.92.67.123/echo')
+        function getEcho(access_token) {
+            var headers = new Headers();
+            var bearer = "Bearer " + access_token;
+            headers.append("Authorization", bearer);
+            var options = {
+                method: "GET",
+                headers: headers
+            };
+            var echoEndpoint = "http://20.92.67.123/echo";
+            
+            fetch(echoEndpoint, options)
                 .then (
                     function (response) {
                         if (response.status !== 200) {
@@ -43,7 +52,8 @@
                   let accessToken = response.accessToken;
             });
             
-            document.getElementById("success").innerHTML = document.getElementById("success").innerHTML + accessToken;
+            //document.getElementById("success").innerHTML = document.getElementById("success").innerHTML + accessToken;
+            getEcho(accessToken);
         }
              
         /*function login() {
