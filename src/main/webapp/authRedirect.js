@@ -42,6 +42,6 @@ function handleResponse(response) {
     }
 }
 
-function signin() {
+export function signin() {
     myMSALObj.loginRedirect(loginRequest);
 }
