@@ -40,20 +40,20 @@
         };
         
         function login() {
-            const aToken = signin();
+            let aToken = signin();
             console.log(aToken);
             
-            let accessToken = "";
+            //let accessToken = "";
             
-             myMSALObj.acquireTokenSilent({
+            /* myMSALObj.acquireTokenSilent({
                 account: myMSALObj.getAllAccounts()[0],
                 scopes: ["openid", "profile"]
             }).then(response => {
                   let accessToken = response.accessToken;
-            });
+            });*/
             
             //document.getElementById("success").innerHTML = document.getElementById("success").innerHTML + accessToken;
-            getEcho(accessToken);
+            getEcho(aToken);
         }
              
         /*function login() {
