@@ -38,7 +38,7 @@
                             console.log(urltoken);
                 
                             const fragment = new URLSearchParams(
-                                urltoken.location.hash.substr(1);
+                                urltoken.location.hash.substr(1)
                                 );
                             tokenResponse = Object.fromEntries(fragment);
                             document.getElementById("success").innerHTML = document.getElementById("success").innerHTML + tokenResponse.get('access_token');
