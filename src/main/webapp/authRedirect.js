@@ -22,7 +22,7 @@ const redirectResponse = await myMSALObj.handleRedirectPromise();
 if (redirectResponse !== null) {
     // Acquire token silent success
     let accessToken = redirectResponse.accessToken;
-    return accessToken;
+    
     // Call your API with token
     //callApi(accessToken);
 } 
