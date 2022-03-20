@@ -1,7 +1,10 @@
 <html>
     <head>
         <title>WildFly Container Quickstart</title>
-          <script type="text/javascript" src="authRedirect.js"></script>
+          <script type="module">
+              import { signin } from "authRedirect.js";
+              window.signin = signin;
+        </script>
                   
           <script id="load-msal" src="https://alcdn.msauth.net/browser/2.15.0/js/msal-browser.js"
             integrity="sha384-dFzMiVGB5HpWZ+5w5VSif6jhWfNeplSw9ACYmQKZcY2azuT9kCxVWVI9HyfGdkHV"
