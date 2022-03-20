@@ -1,7 +1,10 @@
-const config = require('./authConfig');
+<script type="module">
+  import { msalConfig, loginRequest } from './authConfig.js';
+</script>
+
 // Create the main myMSALObj instance
 // configuration parameters are located at authConfig.js
-const myMSALObj = new msal.PublicClientApplication(config.msalConfig);
+const myMSALObj = new msal.PublicClientApplication(msalConfig);
 
 let username = "";
 
