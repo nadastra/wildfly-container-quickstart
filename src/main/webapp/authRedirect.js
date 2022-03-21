@@ -35,7 +35,7 @@ function getEcho(access_token) {
                 method: "GET",
                 headers: headers
             };
-            var echoEndpoint = "http://20.92.67.123/echo";
+            var echoEndpoint = "htps://echonodeapp.af302b6b0eae45b58299.australiaeast.aksapp.io/echo";//"http://20.92.67.123/echo";
             
             fetch(echoEndpoint, options)
                 .then (
